@@ -2,12 +2,13 @@ import {Component, inject, OnInit} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute} from "@angular/router";
 import {FormsModule} from "@angular/forms";
+import {NavBarComponent} from "../nav-bar/nav-bar.component";
 
 @Component({
   selector: 'app-weather',
   standalone: true,
   imports: [
-    FormsModule
+    FormsModule, NavBarComponent
   ],
   templateUrl: './weather.component.html',
   styleUrl: './weather.component.css'

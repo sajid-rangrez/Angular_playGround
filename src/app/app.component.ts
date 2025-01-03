@@ -9,9 +9,7 @@ import {NavBarComponent} from "./nav-bar/nav-bar.component";
   standalone: true,
   imports: [RouterOutlet,WeatherComponent,NavBarComponent],
   template: `
-    <app-nav-bar/>
-    <app-weather/>
-
+    <router-outlet/>
   `
   ,
   styleUrl: './app.component.css'
