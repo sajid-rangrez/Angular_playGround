@@ -1,0 +1,13 @@
+<button (click)="getUser()">Get User</button>
+<div>
+    <h1>User Details</h1>
+    <p><strong>Name:</strong> {{ user.name }}</p>
+    <p><strong>Age:</strong> {{ user.age }}</p>
+    <p><strong>ID:</strong> {{ user.id }}</p>
+    <p><strong>Email:</strong> {{ user.mail }}</p>
+    <p><strong>Phone:</strong> {{ user.pone }}</p>
+</div>
+
+<ng-template #loading>
+    <p>Loading user data...</p>
+</ng-template>
