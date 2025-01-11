@@ -3,12 +3,13 @@ import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute} from "@angular/router";
 import {FormsModule} from "@angular/forms";
 import {NavBarComponent} from "../nav-bar/nav-bar.component";
+import {SideBarComponent} from "../side-bar/side-bar.component";
 
 @Component({
   selector: 'app-weather',
   standalone: true,
   imports: [
-    FormsModule, NavBarComponent
+    FormsModule, NavBarComponent, SideBarComponent
   ],
   templateUrl: './weather.component.html',
   styleUrl: './weather.component.css'

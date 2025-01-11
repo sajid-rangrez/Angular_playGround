@@ -1,3 +1,46 @@
-<div class="bg-red-300 w-full h-16">
-  <h2 class="text-2xl font-bold p-3 ">My App</h2>
+<!-- Navbar -->
+<div class="flex items-center justify-between bg-gray-800 text-white p-4">
+  <!-- Brand -->
+  <div class="text-lg font-bold">My App</div>
+
+  <!-- Menu Button -->
+  <button
+    class="lg:hidden text-white focus:outline-none"
+    (click)="toggleSidebar()">
+    <!-- Hamburger Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+      <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16m-7 6h7" />
+    </svg>
+  </button>
+
+  <!-- Links (Visible in larger screens) -->
+  <ul class="hidden lg:flex space-x-4">
+    <li><a href="#" class="hover:text-gray-400">Home</a></li>
+    <li><a href="weather" class="hover:text-gray-400">Weather</a></li>
+    <li><a href="counter" class="hover:text-gray-400">Counter</a></li>
+    <li><a href="todo" class="hover:text-gray-400">TODO</a></li>
+  </ul>
+</div>
+
+<!-- Sidebar (Visible when toggled) -->
+<div
+  class="fixed inset-0 bg-gray-800 bg-opacity-75 z-50 flex lg:hidden"
+  *ngIf="isSidebarOpen">
+  <div class="w-64 bg-white text-black p-4">
+    <button
+      class="mb-4 text-gray-800 focus:outline-none"
+      (click)="toggleSidebar()">
+      <!-- Close Icon -->
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-6 h-6">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+
+    <ul class="space-y-4">
+      <li><a href="#" class="block hover:text-gray-700">Home</a></li>
+      <li><a href="weather" class="block hover:text-gray-700">Weather</a></li>
+      <li><a href="couter" class="block hover:text-gray-700">Counter</a></li>
+      <li><a href="todo" class="block hover:text-gray-700">TODO</a></li>
+    </ul>
+  </div>
 </div>
