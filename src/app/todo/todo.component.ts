@@ -41,4 +41,8 @@ export class TodoComponent {
     console.log(this.taskList);
   }
 
+  deleteTask(index:number){
+    this.taskList.splice(index, 1);
+  }
+
 }

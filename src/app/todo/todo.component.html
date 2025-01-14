@@ -1,15 +1,17 @@
-<div class="h-auto w-3/5 bg-green-300 ml-auto mr-auto mt-5 p-5 rounded-2xl">
+<div class="h-auto w-2/5 min-w-80  bg-green-300 ml-auto mr-auto mt-5 p-5 rounded-2xl">
   <div class="ml-auto mr-auto text-center">
     <h2 class="font-bold text-2xl ml-auto mr-auto mb-5 ">ToDo</h2>
-    <input class="p-1 rounded-md shadow-md" [(ngModel)]="task" [disabled]="disabled" placeholder="Enter New Task">
+    <input class="p-1 rounded-md shadow-md" [(ngModel)]="task" [disabled]="disabled" placeholder="Enter New Task" (keyup.enter)="addNewTask()">
     <button (click)="addNewTask()" class="bg-blue-600  p-1  m-1 rounded-md w-16 text-white font-bold shadow-md">Add</button>
-    <div>
+    <div class="min-w-60">
       <ul>
         <li *ngFor="let todoItem of taskList; let i = index">
-          <div class="text-left ml-16 mt-3 p-3 rounded-lg bg-white w-2/3 flow-root">
-            <input type="checkbox" (change)="complete(i)" class="">
-            <span>{{todoItem.task}}</span>
-            <button class="bg-red-700 float-right p-1  m-1 rounded-md w-16 text-white font-bold shadow-md">Delete</button>
+          <div class="text-left ml-auto mr-auto mt-3 p-3 rounded-lg bg-white w-72 flow-root">
+            <div class="bg-gray-300 w-44 max-w-44 float-left p-1  m-1 rounded-md   font-mono shadow-md break-words">
+            <input type="checkbox" (change)="complete(i)" class="m-1 p-1">
+            <span [class.line-through]="todoItem.status">{{todoItem.task}}</span>
+            </div>
+            <button (click)="deleteTask(i)" class="bg-red-700 float-right p-1  m-1 rounded-md w-16 text-white font-bold shadow-md" >Delete</button>
           </div>
         </li>
       </ul>
